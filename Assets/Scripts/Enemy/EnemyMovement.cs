@@ -18,7 +18,6 @@ public class EnemyMovement : MonoBehaviour
     {
         if (player != null)
         {
-            // Set the destination of the enemy to the player's position
             navMeshAgent.SetDestination(player.position);
         }
     }
