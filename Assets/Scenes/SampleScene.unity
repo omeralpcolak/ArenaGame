@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
-  rotationSpeed: 130
+  rotationSpeed: 150
   movementJoystick: {fileID: 1779165299}
   rotationJoystick: {fileID: 474957017}
 --- !u!114 &106979635
@@ -1302,8 +1302,8 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 3
-  m_BlendUpdateMethod: 0
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 7
     m_Time: 2
@@ -2035,7 +2035,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_StandbyUpdate: 2
+  m_StandbyUpdate: 1
   m_LookAt: {fileID: 106979633}
   m_Follow: {fileID: 1647751535}
   m_Lens:
@@ -2064,7 +2064,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778476364}
-  m_LocalRotation: {x: 0.34042525, y: -0.000000016178673, z: 0.000000005857488, w: 0.9402716}
+  m_LocalRotation: {x: 0.34042525, y: 0.000000016178669, z: -0.0000000058574865, w: 0.9402716}
   m_LocalPosition: {x: 0, y: 5.56, z: -10.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
