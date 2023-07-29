@@ -118,4 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17be92560ffb9f84d9f49504c45de341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 25
+  bulletSpeed: 30
+  bulletDamage: 2

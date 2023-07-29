@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Get input from the movement joystick
         float horizontalInput = movementJoystick.Horizontal;
