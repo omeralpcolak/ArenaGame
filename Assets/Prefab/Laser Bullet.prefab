@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1301999483152674670}
   - component: {fileID: 803504210313367482}
   - component: {fileID: 5749725606758802123}
-  - component: {fileID: -7612135090258144129}
+  - component: {fileID: 1295275970011724379}
   m_Layer: 0
   m_Name: Laser Bullet
   m_TagString: Untagged
@@ -144,8 +144,8 @@ MonoBehaviour:
   bulletSpeed: 30
   bulletDamage: 2
   damageEffect: {fileID: 1429266839263714165, guid: 3dfbe8ea7e2982d47b9ea73bbd70ab59, type: 3}
-  wallHitEffect: {fileID: 8722022390838424144, guid: ff8b2def327aa8a4fbe8e71f1355b96f, type: 3}
---- !u!54 &-7612135090258144129
+  wallHitEffect: {fileID: 4493079447431465692, guid: a74d3266a52a68644822979a0249ca89, type: 3}
+--- !u!54 &1295275970011724379
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,8 +167,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1

@@ -7,14 +7,14 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject spawnEffectPrefab;
     public Transform[] spawnPoints;
-    public float initialSpawnDelay = 0f; // Set to 0 to spawn the first enemy immediately
+    public float initialSpawnDelay = 0f; 
     public float spawnDelay = 2f;
 
     private List<int> usedSpawnIndices = new List<int>();
 
     private void Start()
     {
-        // Spawn the first enemy immediately
+        
         SpawnEnemy();
 
         // Start spawning enemies with a delay
@@ -37,7 +37,7 @@ public class SpawnManager : MonoBehaviour
 
         if (spawnEffectPrefab != null)
         {
-            Instantiate(spawnEffectPrefab, spawnPoint.position, Quaternion.identity);
+            Instantiate(spawnEffectPrefab, spawnPoint.position, spawnEffectPrefab.transform.rotation);
         }
 
         GameObject newEnemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
