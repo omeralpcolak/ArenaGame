@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 {
     public float bulletSpeed = 10f;
     public float bulletDamage = 2;
+    [SerializeField] GameObject damageEffect;
 
     void FixedUpdate()
     {
@@ -20,7 +21,7 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Destroy(gameObject);
-            // add bullet hit effect
+            Instantiate(damageEffect, transform.position, transform.rotation);
             other.GetComponent<EnemyHealthController>().EnemyTakeDamage(bulletDamage);
         }
     }
