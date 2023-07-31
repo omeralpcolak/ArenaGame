@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public float bulletSpeed = 10f;
     public float bulletDamage = 2;
     [SerializeField] GameObject damageEffect;
+    [SerializeField] GameObject wallHitEffect;
 
     void FixedUpdate()
     {
@@ -23,6 +24,15 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             Instantiate(damageEffect, transform.position, transform.rotation);
             other.GetComponent<EnemyHealthController>().EnemyTakeDamage(bulletDamage);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Wall"))
+        {
+            Instantiate(wallHitEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 }

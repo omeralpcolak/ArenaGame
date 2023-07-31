@@ -17,7 +17,7 @@ public class EnemyHealthController : MonoBehaviour
     {
         currentHealth -= damage;
         
-        CinemachineShake.instance.ShakeCamera(5f, .1f);
+        CinemachineShake.instance.ShakeCamera(3.5f, .1f);
 
         if (currentHealth <= 0)
         {
