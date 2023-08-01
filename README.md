@@ -8,3 +8,7 @@ Arena Game is an 3D mobile game. Prototype of arena game :
 Another short gif with new effects and camera shake: 
 
 ![ezgif com-video-to-gif(2)](https://github.com/omeralpcolak/ArenaGame/assets/112391850/88855eaf-0667-49da-bb42-2699fa5912c8)
+
+Also a pickup object was designed and animated: 
+
+![ezgif com-video-to-gif(3)](https://github.com/omeralpcolak/ArenaGame/assets/112391850/51a01c41-17cc-4af2-b82b-c28500d38554)
