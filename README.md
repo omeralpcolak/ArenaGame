@@ -12,3 +12,8 @@ Another short gif with new effects and camera shake:
 Also a pickup object was designed and animated: 
 
 ![ezgif com-video-to-gif(3)](https://github.com/omeralpcolak/ArenaGame/assets/112391850/51a01c41-17cc-4af2-b82b-c28500d38554)
+
+Spawning animation of pickup object:
+
+
+![ezgif com-video-to-gif(4)](https://github.com/omeralpcolak/ArenaGame/assets/112391850/0c8f98cd-06ef-43b7-9bec-301940441fb1)
