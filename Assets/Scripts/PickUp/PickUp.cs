@@ -29,4 +29,16 @@ public class PickUp : MonoBehaviour
         .SetRelative()
         .SetEase(Ease.Linear);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            transform.DOScale(0, .5f).OnComplete(delegate
+            {
+                Destroy(gameObject);
+            });
+        }
+    }
+
 }
