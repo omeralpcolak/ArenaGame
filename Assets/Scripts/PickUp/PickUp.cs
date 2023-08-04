@@ -6,12 +6,19 @@ using DG.Tweening;
 public class PickUp : MonoBehaviour
 {
     [SerializeField] GameObject ring;
+    public float abilityDuration = 10f; 
+    public string abilityName = "FastAttack";
+
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
         PickUpAnimation();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
@@ -34,11 +41,20 @@ public class PickUp : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            transform.DOScale(0, .5f).OnComplete(delegate
+            transform.DOScale(0, 0.5f).OnComplete(delegate
             {
                 Destroy(gameObject);
             });
+
+            PlayerController playerController = other.GetComponent<PlayerController>();
+
+            if (playerController != null)
+            {
+                playerController.ActivateAbility(abilityName, abilityDuration);
+            }
         }
     }
+
+    
 
 }
