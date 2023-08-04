@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -46,8 +47,9 @@ public class PlayerController : MonoBehaviour
         {
             case "FastAttack":
                 hasFastAttack = true;
+                fastAttackAbilityEffect.SetActive(true);
                 originalAttackCooldown = playerAttack.attackCooldown;
-                playerAttack.attackCooldown /= 1.5f;
+                playerAttack.attackCooldown /= 2f;
                 Debug.Log("Ability activated: FastAttack");
                 StartCoroutine(DeactivateFastAttackAfterDuration());
                 break;
@@ -62,7 +64,10 @@ public class PlayerController : MonoBehaviour
     {
         if (fastAttackAbilityEffect != null)
         {
-            fastAttackAbilityEffect.SetActive(false);
+            fastAttackAbilityEffect.transform.DOScale(0, 1f).OnComplete(delegate
+            {
+                fastAttackAbilityEffect.SetActive(false);
+            });
         }
     }
 
