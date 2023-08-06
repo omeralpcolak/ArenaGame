@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
     public bool hasFastAttack = false;
     private float originalAttackCooldown;
     public GameObject fastAttackAbilityEffect;
+    public GameObject fastAttacTxt;
 
     public bool hasSuperSpeed = false;
     private float originalSpeed;
     public GameObject superSpeedEffect;
+    public GameObject superSpeedTxt;
 
     
     private PlayerAttack playerAttack;
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour
             case "FastAttack":
                 hasFastAttack = true;
                 fastAttackAbilityEffect.SetActive(true);
+                fastAttacTxt.SetActive(true);
                 originalAttackCooldown = playerAttack.attackCooldown;
                 playerAttack.attackCooldown /= 2f;
                 Debug.Log("Ability activated: FastAttack");
@@ -62,6 +65,7 @@ public class PlayerController : MonoBehaviour
             case "SuperSpeed":
                 hasSuperSpeed = true;
                 superSpeedEffect.SetActive(true);
+                superSpeedTxt.SetActive(true);
                 originalSpeed = playerMovement.movementSpeed;
                 playerMovement.movementSpeed *= 1.5f;
                 Debug.Log("Ability activated: SuperSpeed");
@@ -88,7 +92,7 @@ public class PlayerController : MonoBehaviour
         {
             superSpeedEffect.transform.DOScale(0, 0.5f).OnComplete(delegate
             {
-                fastAttackAbilityEffect.SetActive(false);
+                superSpeedEffect.SetActive(false);
             });
         }
     }
@@ -97,6 +101,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(abilityDuration);
         hasFastAttack = false;
+        fastAttacTxt.SetActive(false);
         playerAttack.attackCooldown = originalAttackCooldown; 
         Debug.Log("FastAttack ability deactivated!");
     }
@@ -105,6 +110,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(abilityDuration);
         hasSuperSpeed = false;
+        superSpeedTxt.SetActive(false);
         playerMovement.movementSpeed = originalSpeed;
         Debug.Log("SuperSpeed is deactivated!");
 
