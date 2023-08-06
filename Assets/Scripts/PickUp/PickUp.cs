@@ -6,8 +6,8 @@ using DG.Tweening;
 public class PickUp : MonoBehaviour
 {
     [SerializeField] GameObject ring;
-    public float abilityDuration = 10f; 
-    public string abilityName = "FastAttack";
+    public float abilityDuration = 6f;
+    public List<string> abilites = new List<string>() { "FastAttack", "SuperSpeed" };
 
     private void Awake()
     {
@@ -50,7 +50,13 @@ public class PickUp : MonoBehaviour
 
             if (playerController != null)
             {
-                playerController.ActivateAbility(abilityName, abilityDuration);
+                if(abilites.Count>0)
+                {
+                    int randomIndex = Random.Range(0, abilites.Count);
+                    string randomAbility = abilites[randomIndex];
+
+                    playerController.ActivateAbility(randomAbility, abilityDuration);
+                }
             }
         }
     }

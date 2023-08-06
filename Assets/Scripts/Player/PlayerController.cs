@@ -7,19 +7,24 @@ public class PlayerController : MonoBehaviour
 {
     private bool hasAbility = false;
     private float abilityTimer = 0f;
+    private float abilityDuration = 6f;
 
-    
     public bool hasFastAttack = false;
-    private float fastAttackDuration = 10f;
     private float originalAttackCooldown;
     public GameObject fastAttackAbilityEffect;
 
+    public bool hasSuperSpeed = false;
+    private float originalSpeed;
+    public GameObject superSpeedEffect;
+
     
     private PlayerAttack playerAttack;
+    private PlayerMovement playerMovement;
 
     private void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
     // Update is called once per frame
     void Update()
@@ -54,6 +59,15 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(DeactivateFastAttackAfterDuration());
                 break;
 
+            case "SuperSpeed":
+                hasSuperSpeed = true;
+                superSpeedEffect.SetActive(true);
+                originalSpeed = playerMovement.movementSpeed;
+                playerMovement.movementSpeed *= 1.5f;
+                Debug.Log("Ability activated: SuperSpeed");
+                StartCoroutine(DeactivateSuperSpeedAfterDuration());
+                break;
+
             default:
                 Debug.Log("Unknown ability: " + abilityName);
                 break;
@@ -64,7 +78,15 @@ public class PlayerController : MonoBehaviour
     {
         if (fastAttackAbilityEffect != null)
         {
-            fastAttackAbilityEffect.transform.DOScale(0, 1f).OnComplete(delegate
+            fastAttackAbilityEffect.transform.DOScale(0, 0.5f).OnComplete(delegate
+            {
+                fastAttackAbilityEffect.SetActive(false);
+            });
+        }
+
+        if (superSpeedEffect != null)
+        {
+            superSpeedEffect.transform.DOScale(0, 0.5f).OnComplete(delegate
             {
                 fastAttackAbilityEffect.SetActive(false);
             });
@@ -73,9 +95,18 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator DeactivateFastAttackAfterDuration()
     {
-        yield return new WaitForSeconds(fastAttackDuration);
+        yield return new WaitForSeconds(abilityDuration);
         hasFastAttack = false;
         playerAttack.attackCooldown = originalAttackCooldown; 
         Debug.Log("FastAttack ability deactivated!");
+    }
+
+    private IEnumerator DeactivateSuperSpeedAfterDuration()
+    {
+        yield return new WaitForSeconds(abilityDuration);
+        hasSuperSpeed = false;
+        playerMovement.movementSpeed = originalSpeed;
+        Debug.Log("SuperSpeed is deactivated!");
+
     }
 }
