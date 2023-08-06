@@ -17,3 +17,10 @@ Spawning animation of pickup object:
 
 
 ![ezgif com-video-to-gif(4)](https://github.com/omeralpcolak/ArenaGame/assets/112391850/0c8f98cd-06ef-43b7-9bec-301940441fb1)
+
+Example power ups such as Fast Attack and Super Speed: 
+
+![ezgif com-video-to-gif(6)](https://github.com/omeralpcolak/ArenaGame/assets/112391850/52897610-a5fa-4a58-b892-f070cdad3303)
+
+
+![ezgif com-video-to-gif(7)](https://github.com/omeralpcolak/ArenaGame/assets/112391850/b60df601-a8bf-4dd7-9f8a-28f035f2a6be)
